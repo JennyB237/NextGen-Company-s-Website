@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGenLab - About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sky-blue: #87CEEB;
+            --cyan-blue: #00BFFF;
+            --leaf-green: #32CD32;
+            --sunset-orange: #00AEEF;
+            --vibrant-red: #FF1744;
+            --yellow-green: #9AFF9A;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--yellow-green) 100%);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--sky-blue);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--cyan-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--sky-blue), var(--yellow-green));
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            background: white;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--leaf-green);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--leaf-green);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* Who We Are */
+        .who-we-are-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .who-we-are-text {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .who-we-are-image {
+            text-align: center;
+        }
+
+        .who-we-are-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Company Stories */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .story-card {
+            background: var(--yellow-green);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            background: var(--cyan-blue);
+        }
+
+        .story-icon {
+            font-size: 3rem;
+            color: var(--sky-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Core Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, var(--yellow-green), var(--leaf-green));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--cyan-blue), var(--cyan-blue));
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .team-card:hover {
+            border-color: var(--cyan-blue);
+            transform: translateY(-5px);
+        }
+
+        .team-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .team-name {
+            color: var(--leaf-green);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Why Choose Us */
+        .choose-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .choose-card {
+            background: var(--yellow-green);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--leaf-green);
+            transition: all 0.3s ease;
+        }
+
+        .choose-card:hover {
+            background: var(--cyan-blue);
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .choose-card h3 {
+            color: var(--leaf-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .choose-card:hover h3 {
+            color: white;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--sunset-orange), var(--vibrant-red));
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            margin: 40px 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--sunset-orange);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            background: var(--yellow-green);
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--leaf-green);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section li {
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--cyan-blue);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            background: var(--sky-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--cyan-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Badge */
+        .badge {
+            background: var(--leaf-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .who-we-are-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">NextGenLab</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>About NextGenLab</h1>
+            <p>Pioneering the future of technology and innovation through cutting-edge research and development</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Who We Are -->
+        <section class="section" id="who-we-are">
+            <span class="badge">Innovation Leaders</span>
+            <h2 class="section-title">Who We Are</h2>
+            <div class="who-we-are-content">
+                <div class="who-we-are-text">
+                    <p>NextGenLab is a forward-thinking technology company dedicated to pushing the boundaries of what's possible. Founded on the principles of innovation, excellence, and collaboration, we specialize in developing breakthrough solutions that shape the future of various industries.</p>
+                    <br>
+                    <p>Our multidisciplinary team combines expertise in artificial intelligence, biotechnology, sustainable energy, and advanced materials science to create solutions that address tomorrow's challenges today. We believe in the power of technology to transform lives and create a better world for future generations.</p>
+                    <br>
+                    <p>Since our inception, we have been committed to fostering a culture of continuous learning, creative problem-solving, and ethical innovation. Our state-of-the-art facilities and collaborative environment enable our team to explore uncharted territories and deliver groundbreaking results.</p>
+                </div>
+                <div class="who-we-are-image">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=500&h=400&fit=crop" alt="Modern laboratory with researchers working">
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Stories -->
+        <section class="section">
+            <span class="badge">Our Journey</span>
+            <h2 class="section-title">Company Stories</h2>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-icon">🚀</div>
+                    <h3>The Beginning</h3>
+                    <p>Founded in 2020 by a group of visionary scientists and entrepreneurs who shared a common dream of revolutionizing technology for the betterment of humanity.</p>
+                </div>
+                <div class="story-card">
+                    <div class="story-icon">🔬</div>
+                    <h3>First Breakthrough</h3>
+                    <p>Our first major discovery in sustainable energy storage led to partnerships with leading tech companies and established our reputation in the industry.</p>
+                </div>
+                <div class="story-card">
+                    <div class="story-icon">🌍</div>
+                    <h3>Global Expansion</h3>
+                    <p>Expanded operations to three continents, establishing research centers that collaborate on solving global challenges through innovative technology.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="section">
+            <span class="badge">Our Foundation</span>
+            <h2 class="section-title">Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>We constantly push boundaries and explore new possibilities to create groundbreaking solutions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>We believe in the power of teamwork and building strong partnerships to achieve common goals.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Excellence</h3>
+                    <p>We strive for the highest quality in everything we do, from research to implementation.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Sustainability</h3>
+                    <p>We are committed to developing solutions that are environmentally responsible and sustainable.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>Transparency</h3>
+                    <p>We maintain open communication and ethical practices in all our endeavors.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Impact</h3>
+                    <p>We focus on creating meaningful change that positively affects communities worldwide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the Team -->
+        <section class="section" id="team">
+            <span class="badge">Our Experts</span>
+            <h2 class="section-title">Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Dr. Sarah Chen">
+                    <div class="team-name">Dr. Sarah Chen</div>
+                    <div class="team-role">CEO & Co-Founder</div>
+                    <p>Leading AI researcher with 15+ years in machine learning and neural networks.</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Dr. Michael Rodriguez">
+                    <div class="team-name">Dr. Michael Rodriguez</div>
+                    <div class="team-role">CTO & Co-Founder</div>
+                    <p>Biotechnology expert specializing in sustainable solutions and green technology.</p>
+                </div>
+                <div class="team-card">
+                    <img src="RESEARCH.jpg" alt="Dr. Emily Johnson">
+                    <div class="team-name">Dr. Emily Johnson</div>
+                    <div class="team-role">Head of Research</div>
+                    <p>Materials science pioneer with groundbreaking work in nanotechnology applications.</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face" alt="James Park">
+                    <div class="team-name">James Park</div>
+                    <div class="team-role">Head of Operations</div>
+                    <p>Strategic operations leader with expertise in scaling technology companies globally.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section">
+            <span class="badge">Our Advantage</span>
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="choose-us-grid">
+                <div class="choose-card">
+                    <h3>🏆 Proven Track Record</h3>
+                    <p>Over 50 successful projects delivered, with solutions implemented across Fortune 500 companies and startups alike.</p>
+                </div>
+                <div class="choose-card">
+                    <h3>🔬 Cutting-Edge Research</h3>
+                    <p>Access to the latest technologies and research methodologies, ensuring you stay ahead of the competition.</p>
+                </div>
+                <div class="choose-card">
+                    <h3>👥 Expert Team</h3>
+                    <p>Our diverse team of PhD researchers, engineers, and industry experts brings unmatched expertise to every project.</p>
+                </div>
+                <div class="choose-card">
+                    <h3>🚀 Rapid Innovation</h3>
+                    <p>Our agile approach and advanced prototyping capabilities enable faster time-to-market for your innovations.</p>
+                </div>
+                <div class="choose-card">
+                    <h3>🌐 Global Network</h3>
+                    <p>Partnerships with leading universities and research institutions worldwide provide access to global knowledge.</p>
+                </div>
+                <div class="choose-card">
+                    <h3>📊 Measurable Results</h3>
+                    <p>Data-driven approach with clear metrics and KPIs to ensure your investment delivers tangible outcomes.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Shape the Future?</h2>
+            <p class="cta-subtitle">Join us in our mission to create innovative solutions that make a difference</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-button">
+                    🎓 Explore Internships
+                </a>
+                <a href="#" class="cta-button">
+                    🔧 View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NextGenLab</h3>
+                    <p>Pioneering the future through innovative technology solutions and breakthrough research.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon">💼</a>
+                        <a href="#" class="social-icon">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">AI & Machine Learning</a></li>
+                        <li><a href="#">Biotechnology Research</a></li>
+                        <li><a href="#">Sustainable Energy</a></li>
+                        <li><a href="#">Materials Science</a></li>
+                        <li><a href="#">Innovation Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">News & Updates</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 Untarred Malingo<br>Buea, TC 12345</p>
+                    <p>📞 +237-673-273-714</p>
+                    <p>📧 raphaelagbor559@icloud.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NextGenLab. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(135, 206, 235, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.backgroundColor = 'var(--sky-blue)';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Animate sections on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
