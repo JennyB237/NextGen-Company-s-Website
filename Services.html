@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///C:/Users/Double-N/Desktop/NextGenLab/service.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - NextGenLab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Color Variables */
+        :root {
+            --sky-blue: #87CEEB;
+            --cyan-blue: #00CED1;
+            --leaf-green: #32CD32;
+            --sunset-orange: #FF8C00;
+            --vibrant-red: #FF1493;
+            --yellow: #FFD700;
+            --green: #008000;
+        }
+
+        /* Header/Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--sky-blue), var(--cyan-blue));
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--yellow);
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            background: linear-gradient(135deg, rgba(135, 206, 235, 0.9), rgba(0, 206, 209, 0.9)), 
+                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 140px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        /* Intro Section with Background */
+        .intro-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95)), 
+                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--cyan-blue);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .intro-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .intro-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+
+        /* Service Grid Enhanced */
+        .services-grid-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--sky-blue), var(--cyan-blue));
+            position: relative;
+        }
+
+        .services-grid-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+
+        .services-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        }
+
+        .service-main-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-main-image {
+            transform: scale(1.05);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .service-card:nth-child(1) .service-icon { background: linear-gradient(135deg, var(--sky-blue), var(--cyan-blue)); }
+        .service-card:nth-child(2) .service-icon { background: linear-gradient(135deg, var(--leaf-green), var(--green)); }
+        .service-card:nth-child(3) .service-icon { background: linear-gradient(135deg, var(--sunset-orange), var(--vibrant-red)); }
+        .service-card:nth-child(4) .service-icon { background: linear-gradient(135deg, var(--yellow), var(--sunset-orange)); }
+        .service-card:nth-child(5) .service-icon { background: linear-gradient(135deg, var(--vibrant-red), var(--sunset-orange)); }
+        .service-card:nth-child(6) .service-icon { background: linear-gradient(135deg, var(--green), var(--leaf-green)); }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--cyan-blue);
+            position: relative;
+            z-index: 3;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* How We Work Section with Images */
+        .how-we-work {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(135, 206, 235, 0.9), rgba(0, 206, 209, 0.9)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            position: relative;
+        }
+
+        .how-we-work::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .how-we-work .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: var(--yellow);
+            color: var(--cyan-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .process-step h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Client Results with Background */
+        .client-results {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(248,249,250,0.95), rgba(255,255,255,0.95)), 
+                        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .client-results::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .results-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .result-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--sky-blue), var(--cyan-blue), var(--leaf-green), var(--sunset-orange));
+        }
+
+        .result-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+        }
+
+        .result-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--cyan-blue);
+        }
+
+        .result-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--cyan-blue);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .result-label {
+            color: #666;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* CTA Section Enhanced */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.9), rgba(255, 20, 147, 0.9)), 
+                        url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .cta-image:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .cta-button {
+            background: var(--yellow);
+            color: var(--cyan-blue);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Footer Enhanced */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(44, 62, 80, 0.9);
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section {
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-section h3 {
+            color: var(--cyan-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-image {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-image:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-images, .intro-images, .cta-images {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar" style="background: linear-gradient(135deg, var(--sky-blue), var(--cyan-blue)); backdrop-filter: blur(10px);">
+        <div class="nav-container">
+            <a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#" class="logo">TechSolutions Pro</a>
+            <ul class="nav-menu">
+                <li><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#home">Home</a></li>
+                <li><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#services">Services</a></li>
+                <li><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#about">About</a></li>
+                <li><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-position: center 0px;">
+        <div class="hero-content">
+            <h1>Our Professional Services</h1>
+            <p>Transforming ideas into digital reality with cutting-edge technology solutions that drive success</p>
+            <div class="hero-images">
+                <img src="./Our Services - NextGenLab_files/photo-1551434678-e076c223a692" alt="Team collaboration" class="hero-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                <img src="./Our Services - NextGenLab_files/photo-1559136555-9303baea8ebd" alt="Technology workspace" class="hero-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                <img src="./Our Services - NextGenLab_files/photo-1542744173-8e7e53415bb0" alt="Digital innovation" class="hero-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro to Services -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title fade-in visible">What We Offer</h2>
+            <p class="section-subtitle fade-in visible">We provide comprehensive digital solutions to help your business thrive in the modern world. Our expert team delivers innovative, scalable, and results-driven services tailored to your unique needs.</p>
+            <div class="intro-images">
+                <img src="./Our Services - NextGenLab_files/photo-1460925895917-afdab827c52f" alt="Business analytics" class="intro-image fade-in visible" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                <img src="./Our Services - NextGenLab_files/photo-1553877522-43269d4ea984" alt="Creative team" class="intro-image fade-in visible" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                <img src="./Our Services - NextGenLab_files/photo-1516321318423-f06f85e504b3" alt="Innovation lab" class="intro-image fade-in visible" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Grid -->
+    <section class="services-grid-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Our Core Services</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Comprehensive solutions for your digital transformation journey</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1); box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 40px;">
+                    <img src="./Our Services - NextGenLab_files/photo-1467232004584-a241de8bcf5d" alt="Web Development" class="service-main-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="service-icon" style="transform: rotate(0.579985deg) scale(0.98842);">🌐</div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with modern technologies. Responsive, fast, and SEO-optimized solutions that drive results and enhance user experience.</p>
+                </div>
+
+                <div class="service-card fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1512941937669-90a1b58e7e9c" alt="Mobile Development" class="service-main-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="service-icon" style="transform: rotate(-8.08718deg) scale(1.07732);">📱</div>
+                    <h3>Mobile Development</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android. User-friendly interfaces with seamless performance and intuitive design.</p>
+                </div>
+
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1); box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 40px;">
+                    <img src="./Our Services - NextGenLab_files/photo-1677442136019-21780ecad995" alt="AI Solutions" class="service-main-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="service-icon" style="transform: rotate(-9.31903deg) scale(1.09514);">🤖</div>
+                    <h3>AI &amp; Machine Learning</h3>
+                    <p>Intelligent automation and AI-powered solutions to optimize your business processes and enhance decision-making capabilities.</p>
+                </div>
+
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1); box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 40px;">
+                    <img src="./Our Services - NextGenLab_files/photo-1451187580459-43490279c0fa" alt="Cloud Solutions" class="service-main-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="service-icon" style="transform: rotate(-1.98301deg) scale(1.02548);">☁️</div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable cloud infrastructure and migration services. Secure, reliable, and cost-effective cloud computing solutions for modern businesses.</p>
+                </div>
+
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1); box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 40px;">
+                    <img src="./Our Services - NextGenLab_files/photo-1558655146-d09347e92766" alt="UI/UX Design" class="service-main-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="service-icon" style="transform: rotate(7.18314deg) scale(0.932251);">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive user interfaces and exceptional user experiences that engage and convert your audience into loyal customers.</p>
+                </div>
+
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1); box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 40px;">
+                    <img src="./Our Services - NextGenLab_files/photo-1551288049-bebda4e38f71" alt="Data Analytics" class="service-main-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="service-icon" style="transform: rotate(9.73534deg) scale(0.901502);">📊</div>
+                    <h3>Data Analytics</h3>
+                    <p>Transform your data into actionable insights with advanced analytics and business intelligence solutions that drive growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work -->
+    <section class="how-we-work" style="background-position: center 0px;">
+        <div class="container">
+            <h2 class="section-title">How We Work</h2>
+            <p class="section-subtitle">Our proven methodology ensures successful project delivery every time</p>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1600880292203-757bb62b4baf" alt="Discovery phase" class="step-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="step-number">1</div>
+                    <h3>Discovery &amp; Planning</h3>
+                    <p>We start by understanding your business goals, requirements, and challenges to create a comprehensive project roadmap that aligns with your vision.</p>
+                </div>
+
+                <div class="process-step fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1581291518857-4e27b48ff24e" alt="Design phase" class="step-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="step-number">2</div>
+                    <h3>Design &amp; Prototype</h3>
+                    <p>Our design team creates wireframes, mockups, and prototypes to visualize the solution before development begins, ensuring perfect alignment.</p>
+                </div>
+
+                <div class="process-step fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1517180102446-f3ece451e9d8" alt="Development phase" class="step-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>Using agile methodologies, we build your solution with regular updates and feedback loops to ensure quality and timely delivery.</p>
+                </div>
+
+                <div class="process-step fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1454165804606-c3d57bc86b40" alt="Testing phase" class="step-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="step-number">4</div>
+                    <h3>Testing &amp; Launch</h3>
+                    <p>Rigorous testing ensures everything works perfectly before we launch your solution and provide ongoing support for continued success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Results -->
+    <section class="client-results">
+        <div class="container results-container">
+            <h2 class="section-title">Client Results</h2>
+            <p class="section-subtitle">Numbers that speak for our commitment to excellence and client satisfaction</p>
+            
+            <div class="results-grid">
+                <div class="result-card fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1507003211169-0a1dd7228f2d" alt="Projects completed" class="result-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="result-number">500+</div>
+                    <div class="result-label">Projects Completed</div>
+                </div>
+
+                <div class="result-card fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1438761681033-6461ffad8d80" alt="Client satisfaction" class="result-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="result-number">98%</div>
+                    <div class="result-label">Client Satisfaction</div>
+                </div>
+
+                <div class="result-card fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1472099645785-5658abf4ff4e" alt="Happy clients" class="result-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="result-number">150+</div>
+                    <div class="result-label">Happy Clients</div>
+                </div>
+
+                <div class="result-card fade-in visible">
+                    <img src="./Our Services - NextGenLab_files/photo-1556157382-97eda2d62296" alt="Support available" class="result-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="result-number">247/</div>
+                    <div class="result-label">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background-position: center 0px;">
+        <div class="container cta-content">
+            <h2 class="section-title">Ready to Transform Your Business?</h2>
+            <p class="section-subtitle">Let's discuss your project and create something amazing together that exceeds your expectations</p>
+            
+            <div class="cta-images">
+                <img src="./Our Services - NextGenLab_files/photo-1521737711867-e3b97375f902" alt="Business meeting" class="cta-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                <img src="./Our Services - NextGenLab_files/photo-1600508774634-4e11d34730e2" alt="Success celebration" class="cta-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                <img src="./Our Services - NextGenLab_files/photo-1553484771-371a605b060b" alt="Project planning" class="cta-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+            </div>
+            
+            <a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#contact" class="cta-button" onclick="requestQuote()">Request a Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechSolutions Pro</h3>
+                    <p>Transforming businesses through innovative technology solutions. We're committed to delivering excellence in every project and building lasting partnerships.</p>
+                    <div class="footer-images">
+                        <img src="./Our Services - NextGenLab_files/photo-1560472354-b33ff0c44a43" alt="Our office" class="footer-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                        <img src="./Our Services - NextGenLab_files/photo-1522202176988-66273c2fd55f" alt="Team work" class="footer-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#web-dev">Web Development</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#mobile-dev">Mobile Development</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#ai-solutions">AI Solutions</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#cloud">Cloud Services</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#design">UI/UX Design</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#analytics">Data Analytics</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#about">About Us</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#team">Our Team</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#careers">Careers</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#blog">Blog</a></p>
+                    <p><a href="file:///C:/Users/Double-N/Desktop/NextGenLab/service.html#portfolio">Portfolio</a></p>
+                    <div class="footer-images">
+                        <img src="./Our Services - NextGenLab_files/photo-1517245386807-bb43f82c33c4" alt="Company culture" class="footer-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📧 forsongjeff@gmail.com</p>
+                    <p>📞 +237 672-797-691</p>
+                    <p>📍  University of Buea</p>
+                    <p>🌐 www.techsolutionspro.com</p>
+                    <div class="footer-images">
+                        <img src="./Our Services - NextGenLab_files/photo-1497366216548-37526070297c" alt="Contact us" class="footer-image" style="opacity: 1; transform: scale(1); transition: opacity 0.6s, transform 0.6s;">
+                        <img src="./Our Services - NextGenLab_files/photo-1486312338219-ce68e2c6b7d3" alt="Get in touch" class="footer-image" style="opacity: 0; transform: scale(0.95); transition: opacity 0.6s, transform 0.6s;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 TechSolutions Pro. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.boxShadow = '0 25px 60px rgba(0,0,0,0.25)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 15px 40px rgba(0,0,0,0.15)';
+            });
+        });
+
+        // CTA Button click handler
+        function requestQuote() {
+            alert('🎉 Thank you for your interest! Our expert team will contact you within 24 hours to discuss your project requirements and provide a customized solution.');
+        }
+
+        // Enhanced image loading with fade effect
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+                this.style.transform = 'scale(1)';
+            });
+            img.style.opacity = '0';
+            img.style.transform = 'scale(0.95)';
+            img.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Enhanced counter animation for results
+        function animateCounters() {
+            const counters = document.querySelectorAll('.result-number');
+            counters.forEach((counter, index) => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const suffix = counter.textContent.replace(/\d/g, '');
+                let current = 0;
+                const increment = target / 100;
+                
+                setTimeout(() => {
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = target + suffix;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current) + suffix;
+                        }
+                    }, 30);
+                }, index * 200);
+            });
+        }
+
+        // Trigger counter animation when results section is visible
+        const resultsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    resultsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const resultsSection = document.querySelector('.client-results');
+        if (resultsSection) {
+            resultsObserver.observe(resultsSection);
+        }
+
+        // Parallax effect for background images
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero, .how-we-work, .cta-section');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.backgroundPosition = `center ${yPos}px`;
+            });
+        });
+
+        // Add dynamic color animation to service icons
+        document.querySelectorAll('.service-icon').forEach((icon, index) => {
+            setInterval(() => {
+                icon.style.transform = `rotate(${Math.sin(Date.now() * 0.001 + index) * 10}deg) scale(${1 + Math.sin(Date.now() * 0.002 + index) * 0.1})`;
+            }, 50);
+        });
+
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'linear-gradient(135deg, rgba(135, 206, 235, 0.95), rgba(0, 206, 209, 0.95))';
+                navbar.style.backdropFilter = 'blur(15px)';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, var(--sky-blue), var(--cyan-blue))';
+                navbar.style.backdropFilter = 'blur(10px)';
+            }
+        });
+    </script>
+
+</body></html>
